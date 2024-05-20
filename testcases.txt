@@ -1,0 +1,72 @@
+Feature: Stori QA Challenge Automation Tests
+  This feature contains automation tests for the Stori QA Challenge.
+
+  Scenario: Select MEXICO
+    Given I navigate to the practice page
+    When I enter "Me" in the suggestion box
+    And I select "Mexico" from the suggestions
+    Then the suggestion box should contain "Mexico"
+
+  Scenario: Select United States (USA)
+    Given I navigate to the practice page
+    When I enter "Uni" in the suggestion box
+    And I select "United States (USA)" from the suggestions
+    Then the suggestion box should contain "United States (USA)"
+
+  Scenario: Select United Arab Emirates
+    Given I navigate to the practice page
+    When I enter "Uni" in the suggestion box
+    And I select "United Arab Emirates" from the suggestions
+    Then the suggestion box should contain "United Arab Emirates"
+
+  Scenario: Dropdown Example
+    Given I navigate to the practice page
+    When I select option 2 from the dropdown
+    Then the dropdown should display "Option2"
+    When I select option 3 from the dropdown
+    Then the dropdown should display "Option3"
+
+  Scenario: Switch Window Example
+    Given I navigate to the practice page
+    When I click on "open window" button
+    And I switch to the new window
+    Then the new window should contain "30 day money back guarantee"
+    And I close the new window
+    And I switch back to the original window
+
+  Scenario: Switch Tab Example
+    Given I navigate to the practice page
+    When I click on "open tab" button
+    And I switch to the new tab
+    Then the new tab should display the home button
+    And I take a screenshot named "switch_tab_example.png"
+    And I switch back to the original tab
+
+  Scenario: Switch to Alert Example
+    Given I navigate to the practice page
+    When I enter "Stori Card" in the alert input box
+    And I click on "alert" button
+    Then an alert should display "Hello Stori Card"
+    And I accept the alert
+    When I enter "Stori Card" in the alert input box
+    And I click on "confirm" button
+    Then a confirmation alert should display "Hello Stori Card, Are you sure you want to confirm?"
+    And I accept the alert
+
+  Scenario: Web Table Example
+    Given I navigate to the practice page
+    When I check the web table for course costs
+    Then I should find a course costing $25
+    And I should find a course costing $15
+
+  Scenario: Web Table Fixed Header Example
+    Given I navigate to the practice page
+    When I check the fixed header web table
+    Then I should find an Engineer
+    And I should find a Businessman
+
+  Scenario: iFrame Example
+    Given I navigate to the practice page
+    When I switch to the iframe
+    Then I should see the text "We are essentially a Full Stack QA consulting and Training company and we got you covered for your test implementation and training needs."
+    And I switch back to the default content
